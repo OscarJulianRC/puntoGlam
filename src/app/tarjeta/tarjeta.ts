@@ -39,6 +39,10 @@ export class Tarjeta {
     }
   }
 
+  precio(): boolean{
+    return this.product.price === '$ ???';
+  }
+
   agregarAlCarrito() {
     console.log('Producto agregado al carrito:', this.product.name);
     this.carritoService.agregar(this.product.name, this.images[this.currentImgIndex], this.product.price);
