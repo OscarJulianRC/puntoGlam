@@ -28,51 +28,54 @@
     </header>
 
     <main class="container mx-auto p-6 main-content">
-      <div *ngIf="isInicio(); else botonesSimples">
-        <section id="inicio" class="bg-white rounded-lg shadow-xl p-8 mb-12 text-center relative overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center opacity-30"
-            style="background-image: url('assets/Images/favicon.png');">
-          </div>
-          <div class="relative z-10">
-            <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-indigo-800 mb-4 leading-tight">
-              Descubre tu Estilo Único
-            </h2>
-            <p class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto font-serif">
-              Explora nuestra exclusiva colección de ropa para hombre y mujer. Calidad y diseño al mejor precio.
-            </p>
-            <div class="container text-center my-2">
-              <button type="button" class="btn btn-outline-purple" [routerLink]="'/hombre'">Colección
-                Hombre </button>
-              <button type="button" class="btn btn-outline-purple" [routerLink]="'/mujer'">Colección
-                Mujer </button>
-              <button type="button" class="btn btn-outline-purple" [routerLink]="'/ninos'">Colección
-                Niños </button>
-              <button type="button" class="btn btn-outline-purple" [routerLink]="'/pijamas'">Colección
-                Pijamas</button>
-              <button type="button" class="btn btn-outline-purple" [routerLink]="'/unisex'">Colección
-                Unisex </button>
+      <div *ngIf="!isCarrito()">
+        <div *ngIf="isInicio(); else botonesSimples">
+          <section id="inicio" class="bg-white rounded-lg shadow-xl p-8 mb-12 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30"
+              style="background-image: url('assets/Images/favicon.png');">
             </div>
+            <div class="relative z-10">
+              <h2 class="text-4xl sm:text-5xl font-extrabold font-serif text-indigo-800 mb-4 leading-tight">
+                Descubre tu Estilo Único
+              </h2>
+              <p class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto font-serif">
+                Explora nuestra exclusiva colección de ropa para hombre y mujer. Calidad y diseño al mejor precio.
+              </p>
+              <div class="container text-center my-2">
+                <button type="button" class="btn btn-outline-purple" [routerLink]="'/hombre'">Colección
+                  Hombre </button>
+                <button type="button" class="btn btn-outline-purple" [routerLink]="'/mujer'">Colección
+                  Mujer </button>
+                <button type="button" class="btn btn-outline-purple" [routerLink]="'/ninos'">Colección
+                  Niños </button>
+                <button type="button" class="btn btn-outline-purple" [routerLink]="'/pijamas'">Colección
+                  Pijamas</button>
+                <button type="button" class="btn btn-outline-purple" [routerLink]="'/unisex'">Colección
+                  Unisex </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+
+
+        <ng-template #botonesSimples>
+          <div class="container text-center my-2">
+            <button type="button" class="btn btn-outline-purple" [routerLink]="'/hombre'">Colección
+              Hombre </button>
+            <button type="button" class="btn btn-outline-purple" [routerLink]="'/mujer'">Colección
+              Mujer </button>
+            <button type="button" class="btn btn-outline-purple" [routerLink]="'/ninos'">Colección
+              Niños </button>
+            <button type="button" class="btn btn-outline-purple" [routerLink]="'/pijamas'">Colección
+              Pijamas</button>
+            <button type="button" class="btn btn-outline-purple" [routerLink]="'/unisex'">Colección
+              Unisex </button>
           </div>
-        </section>
+        </ng-template>
       </div>
 
-
-
-
-      <ng-template #botonesSimples>
-        <div class="container text-center my-2">
-          <button type="button" class="btn btn-outline-purple" [routerLink]="'/hombre'">Colección
-            Hombre </button>
-          <button type="button" class="btn btn-outline-purple" [routerLink]="'/mujer'">Colección
-            Mujer </button>
-          <button type="button" class="btn btn-outline-purple" [routerLink]="'/ninos'">Colección
-            Niños </button>
-          <button type="button" class="btn btn-outline-purple" [routerLink]="'/pijamas'">Colección
-            Pijamas</button>
-          <button type="button" class="btn btn-outline-purple" [routerLink]="'/unisex'">Colección
-            Unisex </button>
-        </div>
-      </ng-template>
 
 
       <router-outlet></router-outlet>
@@ -110,7 +113,7 @@
     </footer>
 
     <a *ngIf="!verCarrito()" href="carrito"
-      class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-lg transition z-50" >
+      class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-lg transition z-50">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
         stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
         <circle cx="9" cy="21" r="1" />
