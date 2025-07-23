@@ -18,7 +18,7 @@ export class Pijamas implements OnInit {
   
   ngOnInit(): void {
       this.catalogoService.obtenerCatalogo().subscribe((catalogo) => {
-        this.productosPijamas = catalogo.filter(p => p.categoria.toLowerCase() === 'pijamas');
+        this.productosPijamas = catalogo.filter(p => p.categoria.toLowerCase() === 'pijamas' && p.price !== '$ ???');
       })
   }
 }

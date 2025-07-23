@@ -18,7 +18,7 @@ export class Ninos implements OnInit {
   
   ngOnInit(): void {
       this.catalogoService.obtenerCatalogo().subscribe((catalogo) => {
-        this.productosNinos = catalogo.filter(p => p.categoria.toLowerCase() === 'ninos');
+        this.productosNinos = catalogo.filter(p => p.categoria.toLowerCase() === 'ninos' && p.price !== '$ ???');
       })
   }
 }

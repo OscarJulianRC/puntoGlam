@@ -18,7 +18,7 @@ export class Unisex implements OnInit {
   
   ngOnInit(): void {
       this.catalogoService.obtenerCatalogo().subscribe((catalogo) => {
-        this.productosUnisex = catalogo.filter(p => p.categoria.toLowerCase() === 'unisex');
+        this.productosUnisex = catalogo.filter(p => p.categoria.toLowerCase() === 'unisex' && p.price !== '$ ???');
       })
   }
 }

@@ -17,7 +17,7 @@ export class Hombre implements OnInit {
   
   ngOnInit(): void {
       this.catalogoService.obtenerCatalogo().subscribe((catalogo) => {
-        this.productosHombre = catalogo.filter(p => p.categoria.toLowerCase() === 'hombre');
+        this.productosHombre = catalogo.filter(p => p.categoria.toLowerCase() === 'hombre' && p.price !== '$ ???');
       })
   }
 }
