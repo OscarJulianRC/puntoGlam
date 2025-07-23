@@ -1,0 +1,33 @@
+<div class="w-full h-full bg-white rounded-lg shadow flex flex-col justify-between product-card">
+    <div class="relative">
+        <img [src]="images[currentImgIndex]" [alt]="product.name" class="w-full h-[350px] object-cover rounded-t"
+            (error)="imagenFallback($event)" />
+
+        <button *ngIf="images.length > 1" (click)="cambiarImagen('prev')"
+            class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-1 shadow hover:bg-indigo-100">
+            &#8592;
+        </button>
+
+        <button *ngIf="images.length > 1" (click)="cambiarImagen('next')"
+            class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-1 shadow hover:bg-indigo-100">
+            &#8594;
+        </button>
+    </div>
+
+    <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ product.name }}</h3>
+        <p class="text-xl font-bold text-indigo-600 mb-4">{{ product.price }}</p>
+
+        <div class="flex justify-center mt-4">
+            <button
+                class="bg-indigo-600 hover:bg-purple-700 text-white font-bold py-2 px-4 whatsapp-button flex items-center justify-center space-x-2"
+                (click)="agregarAlCarrito()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M11 9V6H8V4h3V1h2v3h3v2h-3v3h-2Zm-4.75 13q-.925 0-1.562-.638Q4.05 20.725 4.05 19.8q0-.925.638-1.562.637-.638 1.562-.638.925 0 1.563.638.637.637.637 1.562 0 .925-.637 1.562-.638.638-1.563.638Zm11.5 0q-.925 0-1.563-.638-.637-.637-.637-1.562 0-.925.637-1.562.638-.638 1.563-.638.925 0 1.562.638.638.637.638 1.562 0 .925-.638 1.562-.637.638-1.562.638Zm-11.5-3.5q.925 0 1.563.637.637.638.637 1.563 0 .925-.637 1.562-.638.638-1.563.638-.925 0-1.562-.638Q4.05 20.425 4.05 19.5q0-.925.638-1.563.637-.637 1.562-.637Zm11.5 0q.925 0 1.562.637.638.638.638 1.563 0 .925-.638 1.562-.637.638-1.562.638-.925 0-1.563-.638-.637-.637-.637-1.562 0-.925.637-1.563.638-.637 1.563-.637ZM6.5 15.5l-2.9-7.7H1V6h3.05l3.4 9h8.7l3.1-6.25.875 1.75-2.8 5.5q-.3.6-.838.9-.537.3-1.212.3H6.5Z" />
+                </svg>
+                <span>Añadir al carrito</span>
+            </button>
+        </div>
+    </div>
+</div>

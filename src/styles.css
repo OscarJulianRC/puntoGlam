@@ -1,1 +1,157 @@
-/* You can add global styles to this file, and also import other style files */
+/* Custom styles for Inter font if not already loaded by Google Sites */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* styles.css */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.page-container {
+  min-height: 100vh; /* Toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+}
+/* Specific styles for rounded corners, shadow, and hover effects */
+.product-card {
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* shadow-lg */
+    overflow: hidden;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    /* ease-in-out */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp-button {
+    border-radius: 9999px;
+    /* rounded-full */
+    transition-property: background-color, transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.02);
+}
+
+#women-products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ocultar productos fuera de la vista */
+}
+
+#men-products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ocultar productos fuera de la vista */
+}
+
+#children-products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ocultar productos fuera de la vista */
+}
+
+#pajamas-products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ocultar productos fuera de la vista */
+}
+
+#unisex-products {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Ocultar productos fuera de la vista */
+}
+
+#women-products-wrapper>div,
+#men-products-wrapper>div,
+#children-products-wrapper>div,
+#pajamas-products-wrapper>div,
+#unisex-products-wrapper>div {
+    flex: 0 0 25%;
+    /* Por defecto, cada producto ocupa el 25% del ancho del contenedor */
+}
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+
+    #women-products-wrapper>div,
+    #men-products-wrapper>div,
+    #children-products-wrapper>div,
+    #pajamas-products-wrapper>div,
+    #unisex-products-wrapper>div {
+        flex: 0 0 33.33%;
+        /* Cada producto ocupa el 33.33% del ancho del contenedor */
+    }
+}
+
+/* Para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+
+    #women-products-wrapper>div,
+    #men-products-wrapper>div,
+    #children-products-wrapper>div,
+    #pajamas-products-wrapper>div,
+    #unisex-products-wrapper>div {
+        flex: 0 0 50%;
+        /* Cada producto ocupa el 50% del ancho del contenedor */
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+
+    #women-products-wrapper>div,
+    #men-products-wrapper>div,
+    #children-products-wrapper>div,
+    #pajamas-products-wrapper>div,
+    #unisex-products-wrapper>div {
+        flex: 0 0 100%;
+        /* Cada producto ocupa el 100% del ancho del contenedor */
+    }
+}
+
+.btn-outline-purple {
+  color: white; /* púrpura */
+  border: 1px solid #8b5cf6;
+  background-color: #8b5cf6;
+  transition: 0.3s ease-in-out;
+  font-weight: bold;               /* font-bold */
+  font-family: serif;              /* font-serif */
+  padding-top: 0.75rem;            /* py-3 */
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;              /* px-8 */
+  padding-right: 2rem;
+  border: 1rem;
+  margin: 0.5rem;
+  border-radius: 9999px;           /* rounded-full */
+  font-size: 1.125rem;             /* text-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+              0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transform: translateZ(0);        /* transform */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
